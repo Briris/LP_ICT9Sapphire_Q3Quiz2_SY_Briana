@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LP_ICT9Sapphire_Q3Quiz2_SY_Briana</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+	body {text-align: center;
+		background-color: #4455DD;
+		font-family: Verdana;
+		background-image: url(sekai.png);
+		background-size:cover;
+		background-attachment: fixed;
+		background-repeat: no-repeat;}
+	h2 {color: white;}
+	.ichi {background-color: #33AAEE;}
+	.saki {background-color: #FFDD45;}
+	.hona {background-color: #EE6666;}
+	.shiho {background-color: #BBDE22;}
+	.logo {background-color: white;
+		border: 10px dashed;
+		border-color: #4455DD;}
+
+</style>
+
+</head>
+<body>
+
+<div class="container p-5">
+	<h4 class="ichi">Ticketing Center</h4>
+<img src="ln.png" class="logo">
+
+<hr>
+		<form>
+	<details ontoggle="message()" class="saki">
+		<summary>Personal Information</summary>
+		<i>Fill out the form below.</i>		
+<br>
+<br>
+		<label>Complete Name:</label>
+		<input type="text" name="name" placeholder="Type here..." class="form-control">
+	
+		<label>Email:</label>
+		<input type="text" name="email" placeholder="Type here..." class="form-control">
+
+<br>
+<button type="button" class="btn btn-warning" onclick="msg()">Submit Info</button>
+<br>
+<br>
+
+	</details>
+<br>
+
+	<details ontoggle="message()" class="hona">
+		<summary>Ticket Price</summary>
+		<i>Check your ticket price.</i>		
+<br>
+<br>
+		<label>Choose your seat:</label>
+		<select class="form-select" id="seat">
+			<option value="none">Select</option>
+			<option value="700">Front Row</option>
+			<option value="700">Middle Row</option>
+			<option value="700">Back Row</option>
+		</select>
+<br>
+		<label>Choose an option:</label>
+		<select class="form-select" id="discount">
+			<option value="none">Select</option>
+			<option value="0">Regular</option>
+			<option value="0.2">PWD/SC/Student</option>
+		</select>
+
+<br>
+<button type="button" class="btn btn-danger" onclick="check_discount()">Ticket Price</button>
+<br>
+<br>
+
+</details>
+<br>
+
+	<details ontoggle="message()" class="shiho">
+		<summary>Print Ticket</summary>
+		<i>Select your ticket.</i>
+<br>
+<img src="ticket.jpg">
+<button type="button" class="btn btn-success" onclick="print_ticket()">Print Ticket</button>
+
+<br>
+<br>
+
+</details>
+<br>
+<button type="button" class="btn btn-primary" onclick="location.reload()">Buy Another Ticket</button>
+</form>
+</div>
+
+<script>
+	function check_discount() {
+		var seat = document.getElementById ('seat').value;
+		var disc = document.getElementById ('discount').value;
+		var final_rate = seat - (disc * seat);
+
+			window.alert('Your ticket price is' + ' '+ final_rate);
+	}
+
+	function msg() {
+		window.alert('Your information has been recorded, please proceed to the next form.')
+	}
+
+	function print_ticket() {
+		window.alert('Your purchase has been recorded and sent to your email' + ' ' + 'Thank you for buying from Leo/NEED Ticketing Center, and See you at the concert!')
+	}
+
+</script>
+
+
+<hr>
+<p style="text-align: center;"><b><i>Submitted By Briana Gabrielle C. SY</i></b></p>
+
+
+
+</body>
+</html>
